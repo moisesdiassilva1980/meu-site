@@ -1,0 +1,19 @@
+/* reset css */
+*{ 
+    margin: 0; /* margem externa*/
+    padding: 0; 
+
+}
+
+header {
+    /*flexbox*/
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: ;
+    padding-top: ;
+    padding-right: ;
+    padding-bottom: ;
+    padding-left: ; 
+}
