@@ -1,0 +1,241 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Gravitas+One&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&display=swap');
+
+/* 
+
+Alan Sans
+font-family: "Alan Sans", sans-serif;
+
+Libre Baskerville
+font-family: "Libre Baskerville", serif;
+
+Gravitas One
+ font-family: "Gravitas One", serif;
+
+Oswald:
+font-family: "Oswald", sans-serif;
+
+*/
+
+
+
+/* Fontes */
+:root {
+  --fonte-titulo-h1: "Libre Baskerville", serif;
+  --fonte-textos: ;
+  --fonte-subtitulo-h2: ;
+  --fonte-subtitulo-h3: "Gravitas One", serif;
+
+}
+
+
+
+
+/* Color -> Dark */
+:root,
+:root[data-theme="dark"] {
+  --cor-fundo: #111217;
+  --cor-fundo-secundario:#28292E;
+
+  --cor-text-menu-link: #ffffff;
+  --cor-border-botton: #ffffff;
+  --cor-icon-theme: #ffffff;
+
+  --cor-titulo: #eaeaea;
+  --cor-textos: #cacaca;
+
+}
+
+/* Color -> Ligth */
+:root,
+:root[data-theme="light"] {
+  --cor-fundo: #cacaca;
+  --cor-fundo-secundario:#eeeeee;
+  --cor-text-menu-link: #000000;
+  --cor-borda: #000000;
+  --cor-icon-theme: #000000;
+
+  --cor-titulo: #111217;
+  --cor-textos: #111217;
+  
+
+}
+
+/* Aparencia/ Efeito Barra Rolagem */
+html {
+  scroll-behavior: smooth;
+  /* efeito / comportamento */
+  scrollbar-width: thin;
+  scrollbar-color: var(--cor-fundo-secundario) transparent;
+}
+
+/* Reset CSS */
+* {
+  margin: 0; /* Margem Externa */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cor-fundo);
+}
+
+header {
+  /* FLEXBOX */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem; /* 1 rem = 16 pixels */
+  border-bottom: 0.1px solid var(--cor-borda);
+  position: fixed;
+  z-index: 9999; /* CAMADAS */
+  background: var(--cor-fundo);
+}
+
+/* nav */
+.menu-desktop {
+  display: none;
+}
+
+/* ul */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+/* a */
+.menu-link {
+  text-decoration: none;
+}
+
+.menu-text {
+  text-transform: uppercase;
+  color: var(--cor-text-menu-link);
+}
+
+#toggleTheme {
+  color: var(--cor-icon-theme);
+  font-size: 1.5rem;
+  cursor: pointer; /* seta-mouse */
+}
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  background: var(--cor-fundo-secundario);
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  padding-top: 4rem;
+  height: 100vh; /* Viewport Height */
+  border-left: 1px solid var(--cor-borda);
+  align-items: center;
+}
+
+.menu-mobile.active {
+  transform: translateX(0);
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+.btn-menu-mobile {
+  background: transparent;
+  border: none;
+  color: var(--cor-icon-theme);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 0.5rem;
+}
+
+.header-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+/* Herança */
+.menu-link.active .menu-text,
+.menu-link:hover .menu-text {
+  color: red;
+}
+
+/* h1 Base */
+h1 {
+  font-size: 2.5rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo-h3);
+  /* letter-spacing: ; */
+
+}
+
+p {
+  color: var(--cor-textos);
+}
+
+/* Reaproveitar para as seções */
+#home {
+  padding: 3.5rem 1rem;
+}
+
+/* FlexBox da HOME */
+#home {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+
+
+/* Responsividade */
+/* A partir de 768 voltar tela em flex */
+@media (min-width: 768px) {
+  .menu-desktop {
+    display: flex;
+  }
+  
+  .btn-menu-mobile {
+    display: none;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+/* Telas 992 */
+@media (min-width: 992px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+/* Telas 1400px */
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 7rem;
+  }
+}
+
